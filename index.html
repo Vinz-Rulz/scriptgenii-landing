@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScriptGenii — Production-Grade Linux Hardening & Automation Scripts</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Download production-grade Linux hardening scripts for Ubuntu and Debian. Automate UFW, Fail2ban, OpenSSH security, and sysctl tuning in 60 seconds.">
+    <meta name="keywords" content="ubuntu hardening, debian hardening, linux security scripts, server automation, bash automation, ufw fail2ban setup">
+    <link rel="canonical" href="https://scriptgenii.com">
+
+    <!-- Open Graph / Social Sharing Tags -->
+    <meta property="og:title" content="ScriptGenii — Linux Hardening & Automation Scripts">
+    <meta property="og:description" content="Battle-tested shell scripts for Ubuntu & Debian server security. Secure your infrastructure from beginner to expert.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://scriptgenii.com">
+
+    <!-- JSON-LD Structured Data for Software Application & SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "ScriptGenii Linux Hardening Suites",
+      "operatingSystem": "Linux, Ubuntu, Debian",
+      "applicationCategory": "SecuritySoftware",
+      "offers": {
+        "@type": "Offer",
+        "price": "9.99",
+        "priceCurrency": "USD"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "3"
+      }
+    }
+    </script>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter & Fira Code -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#05080f',
+                        cardBg: '#0b1320',
+                        borderSubtle: '#132238',
+                        hackerGreen: '#10b981',
+                        hackerDarkGreen: '#059669',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #05080f;
+            color: #f3f4f6;
+        }
+        .glow-effect {
+            box-shadow: 0 0 50px -10px rgba(16, 185, 129, 0.15);
+        }
+        .glow-card {
+            box-shadow: 0 0 30px -15px rgba(16, 185, 129, 0.2);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #34d399 0%, #10b981 50%, #059669 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .bg-grid {
+            background-image: radial-gradient(rgba(19, 34, 56, 0.6) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="bg-grid min-h-screen flex flex-col selection:bg-hackerGreen selection:text-black">
+
+    <!-- Header / Navigation -->
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-darkBg/80 border-b border-borderSubtle">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 to-emerald-400 flex items-center justify-center glow-effect text-black">
+                    <i class="fa-solid fa-terminal text-lg font-bold"></i>
+                </div>
+                <span class="text-xl font-extrabold tracking-tight text-white">Script<span class="text-hackerGreen">Genii</span></span>
+            </div>
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-300">
+                <a href="#scripts" class="hover:text-hackerGreen transition-colors">Scripts Library</a>
+                <a href="#terminal" class="hover:text-hackerGreen transition-colors">Interactive Demo</a>
+                <a href="#testimonials" class="hover:text-hackerGreen transition-colors">Testimonials</a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <a href="#scripts" class="hidden sm:inline-flex items-center px-4 py-2 rounded-xl text-sm font-bold text-black bg-gradient-to-r from-emerald-400 to-emerald-500 hover:from-emerald-300 hover:to-emerald-400 transition-all shadow-lg shadow-hackerGreen/20">
+                    <i class="fa-solid fa-cart-shopping mr-2"></i> Purchase Scripts
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-20 pb-24 overflow-hidden">
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-hackerGreen/10 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-hackerGreen/10 border border-hackerGreen/20 text-hackerGreen text-xs font-semibold mb-6">
+                <i class="fa-solid fa-bolt"></i>
+                <span>Production-Grade Linux Scripting • Beginner to Expert</span>
+            </div>
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white max-w-4xl mx-auto leading-tight">
+                Master Linux Automation & Security <span class="text-gradient">From Beginner to Expert</span>
+            </h1>
+            <p class="mt-6 text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto font-normal leading-relaxed">
+                Battle-tested, self-contained shell automation suites. From zero-downtime server hardening and high-speed VPN deployments to expert-level bash architectures.
+            </p>
+            <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#scripts" class="w-full sm:w-auto px-8 py-4 rounded-xl text-base font-bold text-black bg-gradient-to-r from-emerald-400 to-emerald-500 hover:from-emerald-300 hover:to-emerald-400 transition-all shadow-xl shadow-hackerGreen/25 flex items-center justify-center">
+                    <i class="fa-solid fa-code mr-2"></i> View Scripts Library
+                </a>
+                <a href="#terminal" class="w-full sm:w-auto px-8 py-4 rounded-xl text-base font-semibold text-gray-200 bg-gray-900 border border-borderSubtle hover:bg-gray-800 transition-all flex items-center justify-center">
+                    <i class="fa-solid fa-terminal mr-2 text-hackerGreen"></i> Try Interactive Demo
+                </a>
+            </div>
+
+            <!-- Quick Stats -->
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto border-t border-borderSubtle pt-12">
+                <div class="text-center">
+                    <div class="text-3xl font-extrabold text-white">100%</div>
+                    <div class="text-xs text-gray-400 mt-1 uppercase tracking-wider">Self-Contained Scripts</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-extrabold text-hackerGreen">Ubuntu & Debian</div>
+                    <div class="text-xs text-gray-400 mt-1 uppercase tracking-wider">LTS Optimized</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-extrabold text-white">15-Min</div>
+                    <div class="text-xs text-gray-400 mt-1 uppercase tracking-wider">Automatic Rollback Safety</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-extrabold text-emerald-400">Zero</div>
+                    <div class="text-xs text-gray-400 mt-1 uppercase tracking-wider">External Dependencies</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Available Scripts Section -->
+    <section id="scripts" class="py-24 bg-darkBg border-t border-borderSubtle relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Production Scripts Library</h2>
+                <p class="mt-4 text-gray-400">Explore our growing catalog of enterprise-grade Linux automation tools. Active releases are ready for purchase on Gumroad; upcoming modules are currently in development.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1: Debian Hardening -->
+                <div class="bg-cardBg border border-borderSubtle rounded-2xl p-6 relative overflow-hidden flex flex-col justify-between glow-card">
+                    <div class="absolute top-0 right-0 transform translate-x-2 -translate-y-2">
+                        <span class="inline-flex items-center px-3 py-1 rounded-bl-xl bg-hackerGreen/10 text-hackerGreen text-xs font-bold border-l border-b border-hackerGreen/20">
+                            <span class="w-2 h-2 rounded-full bg-hackerGreen mr-1.5 animate-pulse"></span> Active v1.1.27
+                        </span>
+                    </div>
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-hackerGreen/10 flex items-center justify-center text-hackerGreen mb-6">
+                            <i class="fa-solid fa-shield-halved text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Debian Hardening Suite</h3>
+                        <p class="mt-3 text-sm text-gray-400 leading-relaxed">
+                            Opinionated, rollback-safe hardening for Debian 12 (Bookworm). OpenSSH key-only auth, UFW ingress protection, Fail2ban recidive jails, and sysctl controls.
+                        </p>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-borderSubtle flex items-center justify-between">
+                        <span class="text-xs text-gray-500 font-mono">amd64 / arm64</span>
+                        <a href="https://harden-debian.scriptgenii.com" target="_blank" class="px-4 py-2 rounded-lg bg-hackerGreen hover:bg-emerald-400 text-black text-xs font-bold transition-all flex items-center shadow-lg shadow-hackerGreen/20">
+                            <i class="fa-solid fa-cart-shopping mr-1.5"></i> Purchase Now
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 2: Ubuntu Hardening -->
+                <div class="bg-cardBg border border-borderSubtle rounded-2xl p-6 relative overflow-hidden flex flex-col justify-between glow-card">
+                    <div class="absolute top-0 right-0 transform translate-x-2 -translate-y-2">
+                        <span class="inline-flex items-center px-3 py-1 rounded-bl-xl bg-hackerGreen/10 text-hackerGreen text-xs font-bold border-l border-b border-hackerGreen/20">
+                            <span class="w-2 h-2 rounded-full bg-hackerGreen mr-1.5 animate-pulse"></span> Active v1.6.0
+                        </span>
+                    </div>
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-hackerGreen/10 flex items-center justify-center text-hackerGreen mb-6">
+                            <i class="fa-solid fa-ubuntu text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Ubuntu Hardening Suite</h3>
+                        <p class="mt-3 text-sm text-gray-400 leading-relaxed">
+                            Custom-built for Ubuntu 24.04 and 26.04 LTS. Features smart existing-account candidate selection, AppArmor enforcement, unattended security upgrades, and custom SSH ports (2222).
+                        </p>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-borderSubtle flex items-center justify-between">
+                        <span class="text-xs text-gray-500 font-mono">amd64 / arm64</span>
+                        <a href="https://harden-ubuntu.scriptgenii.com" target="_blank" class="px-4 py-2 rounded-lg bg-hackerGreen hover:bg-emerald-400 text-black text-xs font-bold transition-all flex items-center shadow-lg shadow-hackerGreen/20">
+                            <i class="fa-solid fa-cart-shopping mr-1.5"></i> Purchase Now
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 3: WireGuard VPN Gateway -->
+                <div class="bg-cardBg border border-borderSubtle rounded-2xl p-6 relative overflow-hidden flex flex-col justify-between opacity-75">
+                    <div class="absolute top-0 right-0 transform translate-x-2 -translate-y-2">
+                        <span class="inline-flex items-center px-3 py-1 rounded-bl-xl bg-gray-800 text-gray-400 text-xs font-bold border-l border-b border-gray-700">
+                            Coming Soon
+                        </span>
+                    </div>
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-gray-800 flex items-center justify-center text-gray-400 mb-6">
+                            <i class="fa-solid fa-network-wired text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">WireGuard VPN Gateway</h3>
+                        <p class="mt-3 text-sm text-gray-400 leading-relaxed">
+                            One-command secure private network deployment with automatic peer management, iptables NAT forwarding, and client QR code generation.
+                        </p>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-borderSubtle flex items-center justify-between">
+                        <span class="text-xs text-gray-500 font-mono">In Development</span>
+                        <span class="text-xs text-gray-500 font-medium italic">Q2 2026</span>
+                    </div>
+                </div>
+
+                <!-- Card 4: Docker & Compose Auto-Deployer -->
+                <div class="bg-cardBg border border-borderSubtle rounded-2xl p-6 relative overflow-hidden flex flex-col justify-between opacity-75">
+                    <div class="absolute top-0 right-0 transform translate-x-2 -translate-y-2">
+                        <span class="inline-flex items-center px-3 py-1 rounded-bl-xl bg-gray-800 text-gray-400 text-xs font-bold border-l border-b border-gray-700">
+                            Coming Soon
+                        </span>
+                    </div>
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-gray-800 flex items-center justify-center text-gray-400 mb-6">
+                            <i class="fa-brands fa-docker text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Docker & Compose Stack Manager</h3>
+                        <p class="mt-3 text-sm text-gray-400 leading-relaxed">
+                            Automated container runtime installation, user daemon config, log rotation policies, and boilerplate reverse-proxy orchestration.
+                        </p>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-borderSubtle flex items-center justify-between">
+                        <span class="text-xs text-gray-500 font-mono">In Development</span>
+                        <span class="text-xs text-gray-500 font-medium italic">Q2 2026</span>
+                    </div>
+                </div>
+
+                <!-- Card 5: Nginx & SSL Automation -->
+                <div class="bg-cardBg border border-borderSubtle rounded-2xl p-6 relative overflow-hidden flex flex-col justify-between opacity-75">
+                    <div class="absolute top-0 right-0 transform translate-x-2 -translate-y-2">
+                        <span class="inline-flex items-center px-3 py-1 rounded-bl-xl bg-gray-800 text-gray-400 text-xs font-bold border-l border-b border-gray-700">
+                            Coming Soon
+                        </span>
+                    </div>
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-gray-800 flex items-center justify-center text-gray-400 mb-6">
+                            <i class="fa-solid fa-server text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Nginx & Certbot Pro</h3>
+                        <p class="mt-3 text-sm text-gray-400 leading-relaxed">
+                            Hardened web server configurations with A+ SSL Labs rating defaults, HTTP/2 & HTTP/3 support, and automated Let's Encrypt renewals.
+                        </p>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-borderSubtle flex items-center justify-between">
+                        <span class="text-xs text-gray-500 font-mono">Planned</span>
+                        <span class="text-xs text-gray-500 font-medium italic">Q3 2026</span>
+                    </div>
+                </div>
+
+                <!-- Card 6: Automated Backup & S3 Sync -->
+                <div class="bg-cardBg border border-borderSubtle rounded-2xl p-6 relative overflow-hidden flex flex-col justify-between opacity-75">
+                    <div class="absolute top-0 right-0 transform translate-x-2 -translate-y-2">
+                        <span class="inline-flex items-center px-3 py-1 rounded-bl-xl bg-gray-800 text-gray-400 text-xs font-bold border-l border-b border-gray-700">
+                            Coming Soon
+                        </span>
+                    </div>
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-gray-800 flex items-center justify-center text-gray-400 mb-6">
+                            <i class="fa-solid fa-database text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">S3 Encrypted Backup Daemon</h3>
+                        <p class="mt-3 text-sm text-gray-400 leading-relaxed">
+                            Scheduled database dumps (PostgreSQL/MySQL), file archive encryption with GPG, and automated multi-region S3 object storage synchronization.
+                        </p>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-borderSubtle flex items-center justify-between">
+                        <span class="text-xs text-gray-500 font-mono">Planned</span>
+                        <span class="text-xs text-gray-500 font-medium italic">Q3 2026</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Terminal Sandbox Section -->
+    <section id="terminal" class="py-24 bg-darkBg border-t border-borderSubtle relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-5">
+                    <h2 class="text-3xl font-extrabold text-white tracking-tight">Try the Interactive Sandbox</h2>
+                    <p class="mt-4 text-gray-400 leading-relaxed">
+                        Test drive our deployment workflow right here in your browser. Type the command below into the simulated terminal to see how the script validates, executes safely, and secures your system.
+                    </p>
+                    <div class="mt-6 p-4 rounded-xl bg-cardBg border border-borderSubtle">
+                        <div class="text-xs font-bold text-hackerGreen uppercase tracking-wider mb-1">Try typing this command:</div>
+                        <code class="text-sm font-mono text-white bg-darkBg px-2 py-1 rounded select-all block">sudo ./harden-debian.sh apply</code>
+                    </div>
+                </div>
+                <div class="lg:col-span-7">
+                    <div class="bg-cardBg border border-borderSubtle rounded-2xl overflow-hidden shadow-2xl">
+                        <!-- Terminal Title Bar -->
+                        <div class="bg-gray-900 px-4 py-3 border-b border-borderSubtle flex items-center justify-between">
+                            <div class="flex items-center space-x-2">
+                                <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+                                <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                                <div class="w-3 h-3 rounded-full bg-emerald-500/80"></div>
+                                <span class="ml-2 text-xs font-mono text-gray-400">root@debian-server:~</span>
+                            </div>
+                            <span class="text-xs text-gray-500 font-mono">Interactive Sandbox</span>
+                        </div>
+                        
+                        <!-- Terminal Body -->
+                        <div id="terminal-body" class="p-6 font-mono text-sm text-gray-300 h-80 overflow-y-auto flex flex-col justify-between leading-relaxed bg-[#070b12]">
+                            <div id="terminal-output" class="space-y-1.5">
+                                <div class="text-gray-500"># Welcome to ScriptGenii Live Sandbox. Type the command below to test.</div>
+                            </div>
+                            
+                            <!-- Interactive Prompt Input -->
+                            <div class="mt-4 pt-3 border-t border-borderSubtle flex items-center space-x-2">
+                                <span class="text-hackerGreen font-bold">root@debian-server:~#</span>
+                                <input type="text" id="terminal-input" placeholder="Type: sudo ./harden-debian.sh apply" 
+                                    class="bg-transparent border-none outline-none text-white font-mono text-sm w-full focus:ring-0"
+                                    autofocus autocomplete="off" spellcheck="false">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-24 bg-darkBg border-t border-borderSubtle relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Trusted by DevOps Engineers & Sysadmins</h2>
+                <p class="mt-4 text-gray-400">See what professionals are saying about ScriptGenii hardening suites and automation scripts.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-cardBg border border-borderSubtle rounded-2xl p-8 flex flex-col justify-between glow-card">
+                    <div>
+                        <div class="flex items-center space-x-1 text-yellow-400 text-sm mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            "The automated rollback timer saved me from a catastrophic lockout during a remote SSH port migration test. ScriptGenii scripts are bulletproof."
+                        </p>
+                    </div>
+                    <div class="mt-8 pt-6 border-t border-borderSubtle flex items-center space-x-4">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-emerald-600 to-emerald-400 flex items-center justify-center font-bold text-black text-sm">
+                            JD
+                        </div>
+                        <div>
+                            <div class="text-sm font-bold text-white">Jason Davis</div>
+                            <div class="text-xs text-gray-500">Senior Infrastructure Engineer</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-cardBg border border-borderSubtle rounded-2xl p-8 flex flex-col justify-between glow-card">
+                    <div>
+                        <div class="flex items-center space-x-1 text-yellow-400 text-sm mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            "Deploying Ubuntu 24.04 LTS droplets across our client fleet used to take hours of manual sysctl tuning and UFW rules. ScriptGenii cuts that down to 60 seconds."
+                        </p>
+                    </div>
+                    <div class="mt-8 pt-6 border-t border-borderSubtle flex items-center space-x-4">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-emerald-500 to-teal-600 flex items-center justify-center font-bold text-black text-sm">
+                            SM
+                        </div>
+                        <div>
+                            <div class="text-sm font-bold text-white">Sarah Martinez</div>
+                            <div class="text-xs text-gray-500">DevOps Lead, CloudScale</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-cardBg border border-borderSubtle rounded-2xl p-8 flex flex-col justify-between glow-card">
+                    <div>
+                        <div class="flex items-center space-x-1 text-yellow-400 text-sm mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            "The code quality and architectural discipline in these shell scripts are exceptional. The smart admin account detection is a masterpiece."
+                        </p>
+                    </div>
+                    <div class="mt-8 pt-6 border-t border-borderSubtle flex items-center space-x-4">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-teal-500 to-emerald-500 flex items-center justify-center font-bold text-black text-sm">
+                            AK
+                        </div>
+                        <div>
+                            <div class="text-sm font-bold text-white">Alexei Kowalski</div>
+                            <div class="text-xs text-gray-500">Systems Architect</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-darkBg border-t border-borderSubtle py-12 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div class="flex items-center space-x-3">
+                <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-emerald-600 to-emerald-400 flex items-center justify-center text-black font-bold">
+                    <i class="fa-solid fa-terminal text-xs"></i>
+                </div>
+                <span class="text-lg font-bold text-white">Script<span class="text-hackerGreen">Genii</span></span>
+            </div>
+            <p class="text-xs text-gray-500">
+                &copy; 2026 ScriptGenii.com. Production-grade Linux scripting from beginner to expert. All rights reserved.
+            </p>
+            <div class="flex items-center space-x-6 text-gray-400 text-sm">
+                <a href="#scripts" class="hover:text-hackerGreen transition-colors">Scripts</a>
+                <a href="#terminal" class="hover:text-hackerGreen transition-colors">Demo</a>
+                <a href="#testimonials" class="hover:text-hackerGreen transition-colors">Testimonials</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Terminal Simulation Script -->
+    <script>
+        const inputField = document.getElementById('terminal-input');
+        const outputContainer = document.getElementById('terminal-output');
+        const terminalBody = document.getElementById('terminal-body');
+
+        const demoScriptSteps = [
+            { text: "sudo ./harden-debian.sh apply", type: "input" },
+            { text: "[*] Initializing Debian 12 Hardening Suite...", type: "info", delay: 400 },
+            { text: "[✔] Phase 1/8: Preflight OS & root privilege validation passed", type: "success", delay: 300 },
+            { text: "[✔] Phase 2/8: Secure configuration backup snapshot created", type: "success", delay: 400 },
+            { text: "[✔] Phase 3/8: Unattended security upgrades & kernel patches enabled", type: "success", delay: 350 },
+            { text: "[✔] Phase 4/8: UFW firewall ingress lockdown configured", type: "success", delay: 400 },
+            { text: "[✔] Phase 5/8: Fail2ban brute-force protection active", type: "success", delay: 300 },
+            { text: "[✔] Phase 6/8: OpenSSH key-only authentication & port hardened", type: "success", delay: 450 },
+            { text: "[✔] Phase 7/8: Kernel sysctl parameters optimized", type: "success", delay: 300 },
+            { text: "[✔] Phase 8/8: 15-minute rollback safety timer disarmed successfully", type: "success", delay: 400 },
+            { text: "\nSUCCESS: Server successfully hardened! To get the full production script file, purchase via Gumroad.", type: "highlight", delay: 200 }
+        ];
+
+        inputField.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                const val = inputField.value.trim();
+                if (val === "sudo ./harden-debian.sh apply" || val === "./harden-debian.sh apply" || val === "harden-debian.sh" || val === "sudo ./harden-ubuntu.sh apply") {
+                    inputField.disabled = true;
+                    inputField.value = "";
+                    runSimulation();
+                } else {
+                    outputContainer.innerHTML += `<div class="text-red-400 mt-1">bash: ${val}: command not found. Try typing: <span class="text-hackerGreen">sudo ./harden-debian.sh apply</span></div>`;
+                    inputField.value = "";
+                    terminalBody.scrollTop = terminalBody.scrollHeight;
+                }
+            }
+        });
+
+        function runSimulation(index = 0) {
+            if (index === 0) {
+                outputContainer.innerHTML += `<div class="mt-2 text-white"><span class="text-hackerGreen">root@debian-server:~#</span> sudo ./harden-debian.sh apply</div>`;
+            }
+            
+            if (index < demoScriptSteps.length) {
+                const step = demoScriptSteps[index];
+                if (step.type !== "input") {
+                    let colorClass = "text-gray-400";
+                    if (step.type === "success") colorClass = "text-gray-300";
+                    if (step.type === "highlight") colorClass = "text-hackerGreen font-bold mt-2";
+                    
+                    outputContainer.innerHTML += `<div class="${colorClass}">${step.text}</div>`;
+                    terminalBody.scrollTop = terminalBody.scrollHeight;
+                }
+                
+                setTimeout(() => {
+                    runSimulation(index + 1);
+                }, step.delay || 300);
+            } else {
+                outputContainer.innerHTML += `<div class="mt-4 p-3 rounded bg-cardBg border border-hackerGreen/30 flex items-center justify-between">
+                    <span class="text-xs text-gray-300">Want the full deployable script file?</span>
+                    <a href="https://harden-debian.scriptgenii.com" target="_blank" class="px-3 py-1.5 rounded bg-hackerGreen text-black text-xs font-bold hover:bg-emerald-400 transition-all">Get It on Gumroad</a>
+                </div>`;
+                terminalBody.scrollTop = terminalBody.scrollHeight;
+            }
+        }
+    </script>
+</body>
+</html>
