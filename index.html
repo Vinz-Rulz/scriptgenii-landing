@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ScriptGenii — Linux Hardening Scripts That Won't Lock You Out</title>
+    <title>ScriptGenii — Practical Server & System Automation Scripts</title>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Lock down Ubuntu and Debian Trixie servers in about a minute. SSH hardening, UFW, Fail2ban, sysctl tuning, and a 15-minute auto-rollback safety net.">
-    <meta name="keywords" content="ubuntu hardening, debian trixie hardening, linux security scripts, server automation, bash automation, ufw fail2ban setup">
+    <meta name="description" content="Practical automation scripts for Linux, Docker, VPNs, web stacks, and system administration. Built to save hours of manual setup with safety rollbacks built in.">
+    <meta name="keywords" content="server automation scripts, bash automation, ubuntu hardening, debian trixie setup, docker automation, wireguard script, devops scripts, powershell automation">
     <link rel="canonical" href="https://scriptgenii.com">
 
     <!-- Open Graph / Social Sharing Tags -->
-    <meta property="og:title" content="ScriptGenii — Linux Hardening Scripts That Won't Lock You Out">
-    <meta property="og:description" content="Straightforward scripts for Ubuntu and Debian Trixie servers. Harden SSH, firewall rules, and kernel defaults without risking a midnight lockout.">
+    <meta property="og:title" content="ScriptGenii — Practical Server & System Automation Scripts">
+    <meta property="og:description" content="Clean, standalone automation scripts for server hardening, Docker stacks, VPNs, and infrastructure workflows—without the manual setup grind.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://scriptgenii.com">
     <meta property="og:image" content="https://scriptgenii.com/logo.jpg">
@@ -22,12 +22,12 @@
     {
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
-      "name": "ScriptGenii Linux Hardening Suites",
-      "description": "Practical server hardening scripts for Ubuntu 24.04/26.04 LTS and Debian Trixie. Locks down OpenSSH, UFW, Fail2ban, and sysctl settings with a 15-minute automatic rollback timer if your connection drops.",
+      "name": "ScriptGenii Automation & Hardening Suites",
+      "description": "Practical, standalone automation scripts for Ubuntu 24.04/26.04 LTS, Debian Trixie, Docker, VPNs, and infrastructure setup—featuring smart preflight checks and a 15-minute automatic rollback timer.",
       "image": "https://scriptgenii.com/logo.jpg",
       "url": "https://scriptgenii.com",
-      "operatingSystem": "Linux, Ubuntu, Debian",
-      "applicationCategory": "SecurityApplication",
+      "operatingSystem": "Linux, Ubuntu, Debian, Cross-Platform",
+      "applicationCategory": "DeveloperApplication",
       "offers": {
         "@type": "Offer",
         "url": "https://scriptgenii.com/#scripts",
@@ -169,13 +169,13 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
             <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-hackerGreen/10 border border-hackerGreen/20 text-hackerGreen text-xs font-semibold mb-6">
                 <i class="fa-solid fa-bolt"></i>
-                <span>Built for Real Linux Servers • No Bloat, No Lockouts</span>
+                <span>Practical Scripting & Automation • No Bloat, No Lockouts</span>
             </div>
             <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white max-w-4xl mx-auto leading-tight">
-                Harden Fresh Linux Boxes <span class="text-gradient">Before the Bots Find Them</span>
+                Automate Your Servers & Stack <span class="text-gradient">Without the Busywork</span>
             </h1>
             <p class="mt-6 text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto font-normal leading-relaxed">
-                Spin up a VPS, run one clean command, and lock down SSH, firewalls, and kernel defaults without spending your evening reading man pages or sweating a bad firewall rule.
+                Clean, standalone automation scripts for system setup, hardening, containers, networking, and recurring ops tasks—built so you don't waste evenings repeating the same manual steps.
             </p>
             <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a href="#scripts" class="w-full sm:w-auto px-8 py-4 rounded-xl text-base font-bold text-black bg-gradient-to-r from-emerald-400 to-emerald-500 hover:from-emerald-300 hover:to-emerald-400 transition-all shadow-xl shadow-hackerGreen/25 flex items-center justify-center">
@@ -193,8 +193,8 @@
                     <div class="text-xs text-gray-400 mt-1 uppercase tracking-wider">Standalone Execution</div>
                 </div>
                 <div class="text-center">
-                    <div class="text-3xl font-extrabold text-hackerGreen">Ubuntu & Trixie</div>
-                    <div class="text-xs text-gray-400 mt-1 uppercase tracking-wider">24.04/26.04 & Debian</div>
+                    <div class="text-3xl font-extrabold text-hackerGreen">Multi-Stack</div>
+                    <div class="text-xs text-gray-400 mt-1 uppercase tracking-wider">Linux, Containers & Ops</div>
                 </div>
                 <div class="text-center">
                     <div class="text-3xl font-extrabold text-white">15-Min</div>
@@ -213,7 +213,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">What's in the Toolbox</h2>
-                <p class="mt-4 text-gray-400">Ready-to-run scripts for active releases today, plus the next batch of server utilities we're shipping next.</p>
+                <p class="mt-4 text-gray-400">Ready-to-run automation scripts available today, plus the next wave of infrastructure, container, and cross-platform tools we're shipping next.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -363,7 +363,7 @@
                 <div class="lg:col-span-5">
                     <h2 class="text-3xl font-extrabold text-white tracking-tight">Take It for a Spin</h2>
                     <p class="mt-4 text-gray-400 leading-relaxed">
-                        See the run flow in action right here in your browser. Run the sample command in the terminal beside you to watch how preflight checks, snapshots, and the rollback timer work.
+                        See the execution flow right here in your browser. Run the sample command in the terminal beside you to watch how preflight checks, snapshots, and the rollback timer work.
                     </p>
                     <div class="mt-6 p-4 rounded-xl bg-cardBg border border-borderSubtle">
                         <div class="text-xs font-bold text-hackerGreen uppercase tracking-wider mb-1">Run this in the box:</div>
@@ -407,8 +407,8 @@
     <section id="testimonials" class="py-24 bg-darkBg border-t border-borderSubtle relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Notes from People Running It</h2>
-                <p class="mt-4 text-gray-400">Feedback from admins, homelabbers, and engineers using ScriptGenii on live servers.</p>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">What Techies Are Saying About Our Scripts</h2>
+                <p class="mt-4 text-gray-400">Real feedback from sysadmins, DevOps engineers, and homelabbers running ScriptGenii on live boxes.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -440,7 +440,7 @@
                             <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                         </div>
                         <p class="text-gray-300 text-sm leading-relaxed">
-                            "Spinning up fresh Ubuntu 24.04 nodes used to mean repeating the same checklist by hand every time. Now I get through initial hardening in about a minute."
+                            "Spinning up fresh Ubuntu 24.04 nodes used to mean repeating the same checklist by hand every time. Now I get through initial setup in about a minute."
                         </p>
                     </div>
                     <div class="mt-8 pt-6 border-t border-borderSubtle flex items-center space-x-4">
@@ -488,7 +488,7 @@
                 <span class="text-lg font-bold text-white">Script<span class="text-hackerGreen">Genii</span></span>
             </div>
             <p class="text-xs text-gray-500">
-                &copy; 2026 ScriptGenii.com. Practical Linux scripts for real servers. All rights reserved.
+                &copy; 2026 ScriptGenii.com. Practical automation scripts for real infrastructure. All rights reserved.
             </p>
             <div class="flex items-center space-x-6 text-gray-400 text-sm">
                 <a href="#scripts" class="hover:text-hackerGreen transition-colors">Scripts</a>
