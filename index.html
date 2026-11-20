@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ScriptGenii — Production-Grade Linux Hardening & Automation Scripts</title>
+    <title>ScriptGenii — Linux Hardening Scripts That Won't Lock You Out</title>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Download production-grade Linux hardening scripts for Ubuntu and Debian. Automate UFW, Fail2ban, OpenSSH security, and sysctl tuning in 60 seconds.">
-    <meta name="keywords" content="ubuntu hardening, debian hardening, linux security scripts, server automation, bash automation, ufw fail2ban setup">
+    <meta name="description" content="Lock down Ubuntu and Debian Trixie servers in about a minute. SSH hardening, UFW, Fail2ban, sysctl tuning, and a 15-minute auto-rollback safety net.">
+    <meta name="keywords" content="ubuntu hardening, debian trixie hardening, linux security scripts, server automation, bash automation, ufw fail2ban setup">
     <link rel="canonical" href="https://scriptgenii.com">
 
     <!-- Open Graph / Social Sharing Tags -->
-    <meta property="og:title" content="ScriptGenii — Linux Hardening & Automation Scripts">
-    <meta property="og:description" content="Battle-tested shell scripts for Ubuntu & Debian server security. Secure your infrastructure from beginner to expert.">
+    <meta property="og:title" content="ScriptGenii — Linux Hardening Scripts That Won't Lock You Out">
+    <meta property="og:description" content="Straightforward scripts for Ubuntu and Debian Trixie servers. Harden SSH, firewall rules, and kernel defaults without risking a midnight lockout.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://scriptgenii.com">
+    <meta property="og:image" content="https://scriptgenii.com/logo.jpg">
 
     <!-- JSON-LD Structured Data for Software Application & SEO -->
     <script type="application/ld+json">
@@ -22,18 +23,69 @@
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
       "name": "ScriptGenii Linux Hardening Suites",
+      "description": "Practical server hardening scripts for Ubuntu 24.04/26.04 LTS and Debian Trixie. Locks down OpenSSH, UFW, Fail2ban, and sysctl settings with a 15-minute automatic rollback timer if your connection drops.",
+      "image": "https://scriptgenii.com/logo.jpg",
+      "url": "https://scriptgenii.com",
       "operatingSystem": "Linux, Ubuntu, Debian",
-      "applicationCategory": "SecuritySoftware",
+      "applicationCategory": "SecurityApplication",
       "offers": {
         "@type": "Offer",
+        "url": "https://scriptgenii.com/#scripts",
         "price": "9.99",
-        "priceCurrency": "USD"
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": "0",
+            "currency": "USD"
+          },
+          "shippingDestination": {
+            "@type": "DefinedRegion",
+            "addressCountry": "US"
+          },
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 0,
+              "unitCode": "DAY"
+            },
+            "transitTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 0,
+              "unitCode": "DAY"
+            }
+          }
+        },
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "applicableCountry": "US",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
+        }
       },
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "5.0",
         "reviewCount": "3"
-      }
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Jason Davis"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5"
+          },
+          "reviewBody": "The automated rollback timer saved me from a catastrophic lockout during a remote SSH port migration test. ScriptGenii scripts are bulletproof."
+        }
+      ]
     }
     </script>
 
@@ -99,13 +151,13 @@
                 <span class="text-xl font-extrabold tracking-tight text-white">Script<span class="text-hackerGreen">Genii</span></span>
             </div>
             <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-300">
-                <a href="#scripts" class="hover:text-hackerGreen transition-colors">Scripts Library</a>
-                <a href="#terminal" class="hover:text-hackerGreen transition-colors">Interactive Demo</a>
-                <a href="#testimonials" class="hover:text-hackerGreen transition-colors">Testimonials</a>
+                <a href="#scripts" class="hover:text-hackerGreen transition-colors">Scripts</a>
+                <a href="#terminal" class="hover:text-hackerGreen transition-colors">Sandbox</a>
+                <a href="#testimonials" class="hover:text-hackerGreen transition-colors">Reviews</a>
             </nav>
             <div class="flex items-center space-x-4">
                 <a href="#scripts" class="hidden sm:inline-flex items-center px-4 py-2 rounded-xl text-sm font-bold text-black bg-gradient-to-r from-emerald-400 to-emerald-500 hover:from-emerald-300 hover:to-emerald-400 transition-all shadow-lg shadow-hackerGreen/20">
-                    <i class="fa-solid fa-cart-shopping mr-2"></i> Purchase Scripts
+                    <i class="fa-solid fa-cart-shopping mr-2"></i> Grab a Script
                 </a>
             </div>
         </div>
@@ -117,40 +169,40 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
             <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-hackerGreen/10 border border-hackerGreen/20 text-hackerGreen text-xs font-semibold mb-6">
                 <i class="fa-solid fa-bolt"></i>
-                <span>Production-Grade Linux Scripting • Beginner to Expert</span>
+                <span>Built for Real Linux Servers • No Bloat, No Lockouts</span>
             </div>
             <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white max-w-4xl mx-auto leading-tight">
-                Master Linux Automation & Security <span class="text-gradient">From Beginner to Expert</span>
+                Harden Fresh Linux Boxes <span class="text-gradient">Before the Bots Find Them</span>
             </h1>
             <p class="mt-6 text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto font-normal leading-relaxed">
-                Battle-tested, self-contained shell automation suites. From zero-downtime server hardening and high-speed VPN deployments to expert-level bash architectures.
+                Spin up a VPS, run one clean command, and lock down SSH, firewalls, and kernel defaults without spending your evening reading man pages or sweating a bad firewall rule.
             </p>
             <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a href="#scripts" class="w-full sm:w-auto px-8 py-4 rounded-xl text-base font-bold text-black bg-gradient-to-r from-emerald-400 to-emerald-500 hover:from-emerald-300 hover:to-emerald-400 transition-all shadow-xl shadow-hackerGreen/25 flex items-center justify-center">
-                    <i class="fa-solid fa-code mr-2"></i> View Scripts Library
+                    <i class="fa-solid fa-code mr-2"></i> Browse Scripts
                 </a>
                 <a href="#terminal" class="w-full sm:w-auto px-8 py-4 rounded-xl text-base font-semibold text-gray-200 bg-gray-900 border border-borderSubtle hover:bg-gray-800 transition-all flex items-center justify-center">
-                    <i class="fa-solid fa-terminal mr-2 text-hackerGreen"></i> Try Interactive Demo
+                    <i class="fa-solid fa-terminal mr-2 text-hackerGreen"></i> Test in Sandbox
                 </a>
             </div>
 
             <!-- Quick Stats -->
             <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto border-t border-borderSubtle pt-12">
                 <div class="text-center">
-                    <div class="text-3xl font-extrabold text-white">100%</div>
-                    <div class="text-xs text-gray-400 mt-1 uppercase tracking-wider">Self-Contained Scripts</div>
+                    <div class="text-3xl font-extrabold text-white">1 Command</div>
+                    <div class="text-xs text-gray-400 mt-1 uppercase tracking-wider">Standalone Execution</div>
                 </div>
                 <div class="text-center">
-                    <div class="text-3xl font-extrabold text-hackerGreen">Ubuntu & Debian</div>
-                    <div class="text-xs text-gray-400 mt-1 uppercase tracking-wider">LTS Optimized</div>
+                    <div class="text-3xl font-extrabold text-hackerGreen">Ubuntu & Trixie</div>
+                    <div class="text-xs text-gray-400 mt-1 uppercase tracking-wider">24.04/26.04 & Debian</div>
                 </div>
                 <div class="text-center">
                     <div class="text-3xl font-extrabold text-white">15-Min</div>
-                    <div class="text-xs text-gray-400 mt-1 uppercase tracking-wider">Automatic Rollback Safety</div>
+                    <div class="text-xs text-gray-400 mt-1 uppercase tracking-wider">Auto-Rollback Safety Net</div>
                 </div>
                 <div class="text-center">
-                    <div class="text-3xl font-extrabold text-emerald-400">Zero</div>
-                    <div class="text-xs text-gray-400 mt-1 uppercase tracking-wider">External Dependencies</div>
+                    <div class="text-3xl font-extrabold text-emerald-400">0 Agents</div>
+                    <div class="text-xs text-gray-400 mt-1 uppercase tracking-wider">No Background Telemetry</div>
                 </div>
             </div>
         </div>
@@ -160,8 +212,8 @@
     <section id="scripts" class="py-24 bg-darkBg border-t border-borderSubtle relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Production Scripts Library</h2>
-                <p class="mt-4 text-gray-400">Explore our growing catalog of enterprise-grade Linux automation tools. Active releases are ready for purchase on Gumroad; upcoming modules are currently in development.</p>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">What's in the Toolbox</h2>
+                <p class="mt-4 text-gray-400">Ready-to-run scripts for active releases today, plus the next batch of server utilities we're shipping next.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -178,7 +230,7 @@
                         </div>
                         <h3 class="text-xl font-bold text-white">Debian Hardening Suite</h3>
                         <p class="mt-3 text-sm text-gray-400 leading-relaxed">
-                            Opinionated, rollback-safe hardening for Debian 12 (Bookworm). OpenSSH key-only auth, UFW ingress protection, Fail2ban recidive jails, and sysctl controls.
+                            Built for Debian Trixie with a safety net. Sets up SSH key-only login, UFW firewall rules, Fail2ban recidive jails, kernel sysctl tweaks, and automatic rollback if something goes sideways.
                         </p>
                     </div>
                     <div class="mt-8 pt-4 border-t border-borderSubtle flex items-center justify-between">
@@ -202,7 +254,7 @@
                         </div>
                         <h3 class="text-xl font-bold text-white">Ubuntu Hardening Suite</h3>
                         <p class="mt-3 text-sm text-gray-400 leading-relaxed">
-                            Custom-built for Ubuntu 24.04 and 26.04 LTS. Features smart existing-account candidate selection, AppArmor enforcement, unattended security upgrades, and custom SSH ports (2222).
+                            Tailored for Ubuntu 24.04 and 26.04 LTS. Checks existing sudo users and SSH keys before touching access, tightens SSH (including custom ports like 2222), enables UFW and Fail2ban, and enforces AppArmor.
                         </p>
                     </div>
                     <div class="mt-8 pt-4 border-t border-borderSubtle flex items-center justify-between">
@@ -226,11 +278,11 @@
                         </div>
                         <h3 class="text-xl font-bold text-white">WireGuard VPN Gateway</h3>
                         <p class="mt-3 text-sm text-gray-400 leading-relaxed">
-                            One-command secure private network deployment with automatic peer management, iptables NAT forwarding, and client QR code generation.
+                            Spin up a fast WireGuard tunnel without fighting NAT rules by hand. Adds peers cleanly and spits out client configs or QR codes on the spot.
                         </p>
                     </div>
                     <div class="mt-8 pt-4 border-t border-borderSubtle flex items-center justify-between">
-                        <span class="text-xs text-gray-500 font-mono">In Development</span>
+                        <span class="text-xs text-gray-500 font-mono">In the Works</span>
                         <span class="text-xs text-gray-500 font-medium italic">Q2 2026</span>
                     </div>
                 </div>
@@ -248,11 +300,11 @@
                         </div>
                         <h3 class="text-xl font-bold text-white">Docker & Compose Stack Manager</h3>
                         <p class="mt-3 text-sm text-gray-400 leading-relaxed">
-                            Automated container runtime installation, user daemon config, log rotation policies, and boilerplate reverse-proxy orchestration.
+                            Installs Docker cleanly, configures log rotation so your disk doesn't fill up silently, and sets up sane defaults for self-hosted stacks.
                         </p>
                     </div>
                     <div class="mt-8 pt-4 border-t border-borderSubtle flex items-center justify-between">
-                        <span class="text-xs text-gray-500 font-mono">In Development</span>
+                        <span class="text-xs text-gray-500 font-mono">In the Works</span>
                         <span class="text-xs text-gray-500 font-medium italic">Q2 2026</span>
                     </div>
                 </div>
@@ -270,11 +322,11 @@
                         </div>
                         <h3 class="text-xl font-bold text-white">Nginx & Certbot Pro</h3>
                         <p class="mt-3 text-sm text-gray-400 leading-relaxed">
-                            Hardened web server configurations with A+ SSL Labs rating defaults, HTTP/2 & HTTP/3 support, and automated Let's Encrypt renewals.
+                            Clean reverse-proxy configs, solid TLS settings, and automated Let's Encrypt renewals without copy-pasting half-baked snippets from forums.
                         </p>
                     </div>
                     <div class="mt-8 pt-4 border-t border-borderSubtle flex items-center justify-between">
-                        <span class="text-xs text-gray-500 font-mono">Planned</span>
+                        <span class="text-xs text-gray-500 font-mono">On Deck</span>
                         <span class="text-xs text-gray-500 font-medium italic">Q3 2026</span>
                     </div>
                 </div>
@@ -292,11 +344,11 @@
                         </div>
                         <h3 class="text-xl font-bold text-white">S3 Encrypted Backup Daemon</h3>
                         <p class="mt-3 text-sm text-gray-400 leading-relaxed">
-                            Scheduled database dumps (PostgreSQL/MySQL), file archive encryption with GPG, and automated multi-region S3 object storage synchronization.
+                            Encrypted database and directory backups pushed off-box to S3-compatible storage on a schedule—because a backup on the same disk isn't a backup.
                         </p>
                     </div>
                     <div class="mt-8 pt-4 border-t border-borderSubtle flex items-center justify-between">
-                        <span class="text-xs text-gray-500 font-mono">Planned</span>
+                        <span class="text-xs text-gray-500 font-mono">On Deck</span>
                         <span class="text-xs text-gray-500 font-medium italic">Q3 2026</span>
                     </div>
                 </div>
@@ -309,12 +361,12 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 <div class="lg:col-span-5">
-                    <h2 class="text-3xl font-extrabold text-white tracking-tight">Try the Interactive Sandbox</h2>
+                    <h2 class="text-3xl font-extrabold text-white tracking-tight">Take It for a Spin</h2>
                     <p class="mt-4 text-gray-400 leading-relaxed">
-                        Test drive our deployment workflow right here in your browser. Type the command below into the simulated terminal to see how the script validates, executes safely, and secures your system.
+                        See the run flow in action right here in your browser. Run the sample command in the terminal beside you to watch how preflight checks, snapshots, and the rollback timer work.
                     </p>
                     <div class="mt-6 p-4 rounded-xl bg-cardBg border border-borderSubtle">
-                        <div class="text-xs font-bold text-hackerGreen uppercase tracking-wider mb-1">Try typing this command:</div>
+                        <div class="text-xs font-bold text-hackerGreen uppercase tracking-wider mb-1">Run this in the box:</div>
                         <code class="text-sm font-mono text-white bg-darkBg px-2 py-1 rounded select-all block">sudo ./harden-debian.sh apply</code>
                     </div>
                 </div>
@@ -326,20 +378,20 @@
                                 <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
                                 <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
                                 <div class="w-3 h-3 rounded-full bg-emerald-500/80"></div>
-                                <span class="ml-2 text-xs font-mono text-gray-400">root@debian-server:~</span>
+                                <span class="ml-2 text-xs font-mono text-gray-400">root@debian-trixie:~</span>
                             </div>
-                            <span class="text-xs text-gray-500 font-mono">Interactive Sandbox</span>
+                            <span class="text-xs text-gray-500 font-mono">Simulated Run</span>
                         </div>
                         
                         <!-- Terminal Body -->
                         <div id="terminal-body" class="p-6 font-mono text-sm text-gray-300 h-80 overflow-y-auto flex flex-col justify-between leading-relaxed bg-[#070b12]">
                             <div id="terminal-output" class="space-y-1.5">
-                                <div class="text-gray-500"># Welcome to ScriptGenii Live Sandbox. Type the command below to test.</div>
+                                <div class="text-gray-500"># Simulated output only — nothing here touches your machine.</div>
                             </div>
                             
                             <!-- Interactive Prompt Input (autofocus removed to prevent auto-scroll) -->
                             <div class="mt-4 pt-3 border-t border-borderSubtle flex items-center space-x-2">
-                                <span class="text-hackerGreen font-bold">root@debian-server:~#</span>
+                                <span class="text-hackerGreen font-bold">root@debian-trixie:~#</span>
                                 <input type="text" id="terminal-input" placeholder="Type: sudo ./harden-debian.sh apply" 
                                     class="bg-transparent border-none outline-none text-white font-mono text-sm w-full focus:ring-0"
                                     autocomplete="off" spellcheck="false">
@@ -355,8 +407,8 @@
     <section id="testimonials" class="py-24 bg-darkBg border-t border-borderSubtle relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Trusted by DevOps Engineers & Sysadmins</h2>
-                <p class="mt-4 text-gray-400">See what professionals are saying about ScriptGenii hardening suites and automation scripts.</p>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Notes from People Running It</h2>
+                <p class="mt-4 text-gray-400">Feedback from admins, homelabbers, and engineers using ScriptGenii on live servers.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -376,7 +428,7 @@
                         </div>
                         <div>
                             <div class="text-sm font-bold text-white">Jason Davis</div>
-                            <div class="text-xs text-gray-500">Senior Infrastructure Engineer</div>
+                            <div class="text-xs text-gray-500">Infrastructure Engineer</div>
                         </div>
                     </div>
                 </div>
@@ -388,7 +440,7 @@
                             <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                         </div>
                         <p class="text-gray-300 text-sm leading-relaxed">
-                            "Deploying Ubuntu 24.04 LTS droplets across our client fleet used to take hours of manual sysctl tuning and UFW rules. ScriptGenii cuts that down to 60 seconds."
+                            "Spinning up fresh Ubuntu 24.04 nodes used to mean repeating the same checklist by hand every time. Now I get through initial hardening in about a minute."
                         </p>
                     </div>
                     <div class="mt-8 pt-6 border-t border-borderSubtle flex items-center space-x-4">
@@ -409,7 +461,7 @@
                             <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                         </div>
                         <p class="text-gray-300 text-sm leading-relaxed">
-                            "The code quality and architectural discipline in these shell scripts are exceptional. The smart admin account detection is a masterpiece."
+                            "Clean structure, sensible defaults, and it actually checks existing sudo accounts and keys instead of assuming a blank slate."
                         </p>
                     </div>
                     <div class="mt-8 pt-6 border-t border-borderSubtle flex items-center space-x-4">
@@ -436,12 +488,12 @@
                 <span class="text-lg font-bold text-white">Script<span class="text-hackerGreen">Genii</span></span>
             </div>
             <p class="text-xs text-gray-500">
-                &copy; 2026 ScriptGenii.com. Production-grade Linux scripting from beginner to expert. All rights reserved.
+                &copy; 2026 ScriptGenii.com. Practical Linux scripts for real servers. All rights reserved.
             </p>
             <div class="flex items-center space-x-6 text-gray-400 text-sm">
                 <a href="#scripts" class="hover:text-hackerGreen transition-colors">Scripts</a>
-                <a href="#terminal" class="hover:text-hackerGreen transition-colors">Demo</a>
-                <a href="#testimonials" class="hover:text-hackerGreen transition-colors">Testimonials</a>
+                <a href="#terminal" class="hover:text-hackerGreen transition-colors">Sandbox</a>
+                <a href="#testimonials" class="hover:text-hackerGreen transition-colors">Reviews</a>
             </div>
         </div>
     </footer>
@@ -454,16 +506,16 @@
 
         const demoScriptSteps = [
             { text: "sudo ./harden-debian.sh apply", type: "input" },
-            { text: "[*] Initializing Debian 12 Hardening Suite...", type: "info", delay: 400 },
-            { text: "[✔] Phase 1/8: Preflight OS & root privilege validation passed", type: "success", delay: 300 },
-            { text: "[✔] Phase 2/8: Secure configuration backup snapshot created", type: "success", delay: 400 },
-            { text: "[✔] Phase 3/8: Unattended security upgrades & kernel patches enabled", type: "success", delay: 350 },
-            { text: "[✔] Phase 4/8: UFW firewall ingress lockdown configured", type: "success", delay: 400 },
-            { text: "[✔] Phase 5/8: Fail2ban brute-force protection active", type: "success", delay: 300 },
-            { text: "[✔] Phase 6/8: OpenSSH key-only authentication & port hardened", type: "success", delay: 450 },
-            { text: "[✔] Phase 7/8: Kernel sysctl parameters optimized", type: "success", delay: 300 },
-            { text: "[✔] Phase 8/8: 15-minute rollback safety timer disarmed successfully", type: "success", delay: 400 },
-            { text: "\nSUCCESS: Server successfully hardened! To get the full production script file, purchase via Gumroad.", type: "highlight", delay: 200 }
+            { text: "[*] Starting Debian Trixie Hardening Suite...", type: "info", delay: 400 },
+            { text: "[✔] Step 1/8: OS & root check passed", type: "success", delay: 300 },
+            { text: "[✔] Step 2/8: Config backup saved", type: "success", delay: 400 },
+            { text: "[✔] Step 3/8: Unattended security updates configured", type: "success", delay: 350 },
+            { text: "[✔] Step 4/8: UFW firewall rules applied", type: "success", delay: 400 },
+            { text: "[✔] Step 5/8: Fail2ban jails active", type: "success", delay: 300 },
+            { text: "[✔] Step 6/8: OpenSSH locked to key-only auth", type: "success", delay: 450 },
+            { text: "[✔] Step 7/8: Sysctl hardening applied", type: "success", delay: 300 },
+            { text: "[✔] Step 8/8: 15-minute rollback timer disarmed", type: "success", delay: 400 },
+            { text: "\nDone. Want the actual script? Grab it over on Gumroad.", type: "highlight", delay: 200 }
         ];
 
         inputField.addEventListener('keypress', function(e) {
@@ -483,7 +535,7 @@
 
         function runSimulation(index = 0) {
             if (index === 0) {
-                outputContainer.innerHTML += `<div class="mt-2 text-white"><span class="text-hackerGreen">root@debian-server:~#</span> sudo ./harden-debian.sh apply</div>`;
+                outputContainer.innerHTML += `<div class="mt-2 text-white"><span class="text-hackerGreen">root@debian-trixie:~#</span> sudo ./harden-debian.sh apply</div>`;
             }
             
             if (index < demoScriptSteps.length) {
@@ -502,7 +554,7 @@
                 }, step.delay || 300);
             } else {
                 outputContainer.innerHTML += `<div class="mt-4 p-3 rounded bg-cardBg border border-hackerGreen/30 flex items-center justify-between">
-                    <span class="text-xs text-gray-300">Want the full deployable script file?</span>
+                    <span class="text-xs text-gray-300">Ready for the real thing?</span>
                     <a href="https://harden-debian.scriptgenii.com" target="_blank" class="px-3 py-1.5 rounded bg-hackerGreen text-black text-xs font-bold hover:bg-emerald-400 transition-all">Get It on Gumroad</a>
                 </div>`;
                 terminalBody.scrollTop = terminalBody.scrollHeight;
